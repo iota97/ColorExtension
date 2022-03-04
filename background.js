@@ -5,17 +5,31 @@ document.addEventListener("DOMContentLoaded", () => {
     var con = document.getElementById("Extension-conSlider___")
     var res = document.getElementById("Extension-reset___")
 
+    var outhue = document.getElementById("huedisplay")
+    var outsat = document.getElementById("satdisplay")
+    var outbri = document.getElementById("bridisplay")
+    var outcon = document.getElementById("condisplay")
 
     hue.value = localStorage["hueValue"] || 0
     sat.value = localStorage["satValue"] || 100
     bri.value = localStorage["briValue"] || 100
     con.value = localStorage["conValue"] || 100
 
+    outhue.innerHTML = hue.value
+    outsat.innerHTML = sat.value
+    outbri.innerHTML = bri.value
+    outcon.innerHTML = con.value
+
     const apply = (e) => {
         localStorage["hueValue"] = hue.value
         localStorage["satValue"] = sat.value
         localStorage["briValue"] = bri.value
         localStorage["conValue"] = con.value
+
+        outhue.innerHTML = hue.value 
+        outsat.innerHTML = sat.value 
+        outbri.innerHTML = bri.value 
+        outcon.innerHTML = con.value 
 
         chrome.tabs.executeScript(null, {code: 
             "document.documentElement.style.setProperty('filter', 'hue-rotate("+hue.value+"deg) saturate("+sat.value+"%) contrast("+con.value+"%) brightness("+bri.value+"%)');"
