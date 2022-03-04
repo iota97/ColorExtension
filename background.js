@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage["briValue"] = bri.value
         localStorage["conValue"] = con.value
 
-        outhue.innerHTML = hue.value 
-        outsat.innerHTML = sat.value 
-        outbri.innerHTML = bri.value 
-        outcon.innerHTML = con.value 
+        outhue.innerHTML = hue.value + "&deg;"
+        outsat.innerHTML = sat.value + "&percnt;"
+        outbri.innerHTML = bri.value + "&percnt;"
+        outcon.innerHTML = con.value + "&percnt;"
 
         chrome.tabs.executeScript(null, {code: 
             "document.documentElement.style.setProperty('filter', 'hue-rotate("+hue.value+"deg) saturate("+sat.value+"%) contrast("+con.value+"%) brightness("+bri.value+"%)');"
