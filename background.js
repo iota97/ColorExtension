@@ -15,11 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     bri.value = localStorage["briValue"] || 100
     con.value = localStorage["conValue"] || 100
 
-    outhue.innerHTML = hue.value
-    outsat.innerHTML = sat.value
-    outbri.innerHTML = bri.value
-    outcon.innerHTML = con.value
-
     const apply = (e) => {
         localStorage["hueValue"] = hue.value
         localStorage["satValue"] = sat.value
